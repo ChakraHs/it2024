@@ -1,0 +1,56 @@
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.background-video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.center-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+.center-container > h1{
+    font-size: 3.14rem;
+}
+
+.clock-container{
+    width: 50vw;
+    /* height: 100px; */
+    padding: 2rem 1rem;
+    border: #ffffff60 2px solid;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+.clock-element > *{
+    margin: auto;
+    width: fit-content;
+}
+.clock-element{
+    width: 100%;
+    margin: 0 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}

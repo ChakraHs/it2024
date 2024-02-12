@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.links{
+    width: fit-content;
+}
+.links ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+

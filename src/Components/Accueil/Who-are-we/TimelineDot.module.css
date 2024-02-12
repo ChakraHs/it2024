@@ -1,0 +1,24 @@
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /*background: linear-gradient(45deg, var(--black) 100%, var(--black) 100%);*/
+    z-index: 10;
+}
+
+.selected{
+    background-size: 400% 400%!important;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 25%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

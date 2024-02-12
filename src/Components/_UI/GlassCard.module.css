@@ -1,0 +1,20 @@
+.glassCard{
+    padding:2rem!important;
+    height:300px!important;
+    background-color:rgba(255,255,255,25%)!important;
+    border:1px solid rgba(255,255,255,50%)!important;
+    border-radius:20px!important;
+    box-shadow:none!important;
+    display:flex!important;
+    flex-direction:row!important;
+    gap:1rem!important;
+    backdrop-filter:blur(5px)!important;
+    z-index:1!important;
+    transition: .3s;
+}
+
+.cardImage{
+    width: 50%!important;
+    object-fit: cover!important;
+    border-radius: 20px;
+}

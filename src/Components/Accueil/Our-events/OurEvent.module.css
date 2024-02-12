@@ -1,0 +1,25 @@
+.itholicSelected{
+    background-size: 400% 400%!important;
+    background-image: linear-gradient(-90deg, var(--primary-dark)  0%, var(--secondary) 100%)!important;
+    animation: gradient 5s ease infinite;
+}
+.itholicSelectedMobile{
+    background-size: 400% 400%!important;
+    background-image: linear-gradient(0deg, var(--secondary) 0%, var(--primary-dark) 100%)!important;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 100%;
+    }
+    50% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+
+
