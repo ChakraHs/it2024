@@ -2,7 +2,7 @@ import React from 'react';
 
 import {BrowserRouter, Route, Routes } from "react-router-dom";
 import Accueil from "./Components/Accueil/Accueil";
-import Itholic from "./Components/Itholic/Itholic";
+import Itholic from "./Components/Itholic/pages/GlobalPage";
 // import Event from "./pages/Events";
 // import MeetTheTeam from "./pages/MeetTheTeam";
 

@@ -8,7 +8,8 @@ const Footer = () => {
     const footerDivSX = {
         height:"auto",
         marginTop:"300px",
-        backgroundColor:"var(--black)"
+        backgroundColor:"var(--black)",
+        width: "100%"
     }
     const footerSX = {
         height: "100%",

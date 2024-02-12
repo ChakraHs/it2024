@@ -200,7 +200,6 @@ const OurCells = ({ id,sectionId }) => {
                                 scrollButtons="auto"
                                 indicatorColor="secondary"
                                 textColor="secondary"
-                                scrollButtons
                                 allowScrollButtonsMobile
                                 aria-label="scrollable auto tabs example"
                                 sx={{ margin:"auto" }}
