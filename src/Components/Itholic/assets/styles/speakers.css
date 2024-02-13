@@ -1,0 +1,60 @@
+.speakers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: #151515;
+    padding: 40px;
+    padding-top:80px;
+    padding-bottom: 80px;
+    color: aliceblue;
+  }
+
+
+  .speackersheader{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:100px;
+    text-align: center;
+    justify-content: center;
+    /* font-weight: 600; */
+    /* background-color: rgb(255, 255, 255); */
+    /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
+    /* background-repeat: repeat; */
+    width: 100vw;
+    height: 150px;
+}
+.speakerTitle{
+    font-size: 2.8rem;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    /* text-shadow: 0 0 65px #9d2eb0; */
+    position: relative;
+    display: inline-block; 
+    text-align: center;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.speackersheader p{
+    color: #9d2eb0;
+}
+
+.speakerName{
+    color: #9d2eb0;
+}
+
+.onespeaker{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+}
+
+.speackerimage{
+    width: 70%;
+}

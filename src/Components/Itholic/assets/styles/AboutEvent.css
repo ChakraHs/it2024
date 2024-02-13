@@ -9,25 +9,50 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding-top:150px;
+    padding-top:0px;
     padding-bottom: 150px;
+    /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
+    /* background-repeat: repeat; */
+
   }
   
+
+.AboutEventheader{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:60px;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
+    /* background-repeat: repeat; */
+    width: 100vw;
+    height: 350px;
+}
 .AboutEventTitle{
     font-size: 2.8rem;
-    color: rgb(222, 222, 222);
+    color: #4F4F4F;
     text-transform: uppercase;
     /* text-shadow: 0 0 65px #9d2eb0; */
     position: relative;
-    display: inline-block; 
-    margin-bottom:60px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    justify-content: center;
     font-weight: 600;
+    background-repeat: repeat;
+    padding: 20px;
+}
+
+.AboutEventheader p{
+    color: #797979;
 }
 
 .CardGroup{
-    display: flex;
-    gap: 40px;
+    width: 60%;
 }
 
 

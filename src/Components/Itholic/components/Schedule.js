@@ -10,6 +10,75 @@ function Schedule() {
   const [selectedDay, setSelectedDay] = useState(1); // Default to the first day
 
   // Define the list of days and their activities
+
+  const day1info = [
+    {
+        tim1: {
+            title: "8:30 a.m - 11:30 a.m",
+            text: "planning of matin.",
+        }
+    },
+    {
+        tim2: {
+            title: "9:30 a.m - 11:30 a.m",
+            text: "lftor okda",
+        }
+    },
+    {
+        time3: {
+            title: "12:30 p.m - 1:30 p.m",
+            text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
+        }
+
+    },
+]
+
+
+const day2info = [
+  {
+      tim1: {
+          title: "8:30 a.m - 11:30 a.m",
+          text: "planning of matin day2.",
+      }
+  },
+  {
+      tim2: {
+          title: "9:30 a.m - 11:30 a.m",
+          text: "lftor okda",
+      }
+  },
+  {
+      time3: {
+          title: "12:30 p.m - 1:30 p.m",
+          text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
+      }
+
+  },
+]
+
+
+
+const day3info = [
+  {
+      tim1: {
+          title: "8:30 a.m - 11:30 a.m",
+          text: "planning of matin day3.",
+      }
+  },
+  {
+      tim2: {
+          title: "9:30 a.m - 11:30 a.m",
+          text: "lftor okda",
+      }
+  },
+  {
+      time3: {
+          title: "12:30 p.m - 1:30 p.m",
+          text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
+      }
+
+  },
+]
   const days = [
     {
       day: 1,
@@ -43,8 +112,8 @@ function Schedule() {
 
   return (
     <div className="schedule">
-        <div>
-            <h1 className='scheduleTitle'>SCHEDULE</h1>
+        <div className='scheduleHeader'>
+            <h1 className='scheduleTitle h-underline-6'>SCHEDULE</h1>
         </div>
       {/* Buttons to select days */}
       <div className="day-selector row container justify-content-center d-flex w-100">
@@ -60,9 +129,6 @@ function Schedule() {
                   <div className='col-md-3 day'>
                     Day {dayObj.day}
                   </div>
-                  <div className='col-md-9 d-flex justify-content-start'>
-                    Description of the title of timing
-                  </div>
                 </div>
               </div>
             </div>
@@ -72,7 +138,7 @@ function Schedule() {
       {/* Display activities for the selected day */}
       <div className="activities col-md-10">
         {/* <h2>Day {selectedDay} Activities:</h2> */}
-        <DayPlanning></DayPlanning>
+        <DayPlanning dayinfo = {selectedDay == 1 ? day1info: selectedDay == 2 ? day2info : day3info}></DayPlanning>
         {/* <ul>
           {days[selectedDay - 1].activities.map((activity, index) => (
             <li key={index}>

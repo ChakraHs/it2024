@@ -18,6 +18,8 @@
     flex-direction: column;
     max-width: 100vw;
     overflow-x: hidden;
+    background-color: #151515;
+    min-height: 100vh;
   }
 
   .hero {
@@ -29,6 +31,10 @@
     width: 100vw;
     overflow-x: hidden ;
   }
+
+  .imgG{
+    width:80%;
+  }
   
   .background-video {
     position: absolute;
@@ -37,7 +43,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 1;
   }
   
   .content {
@@ -86,7 +92,7 @@
   }
   
   .button {
-    margin: 0 10px;
+    margin: 10px;
     padding: 10px 20px;
     font-size: 1.2rem;
     background-color: rgba(0, 0, 0, 0.5);
@@ -103,4 +109,61 @@
   .button:hover {
     transform: scale(1.04);
   }
+
+
+.h-underline-6{
+    position: relative;
+}
+.h-underline-6::after{
+    color: #9d2eb0 !important;
+    content: '';
+    position: absolute;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    /* Adjust the width of the line */
+    height: 3px;
+    /* Adjust the height of the line */
+    background-color: #9d2eb0;
+    /* Line color */
+}
+
+
+
+.loader {
+  position: relative;
+  width: 64px;
+  height: 60px;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  width: 64px;
+  height: 32px;
+  border-radius: 0 0 50px 50px;
+  animation: move 0.5s linear infinite alternate;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #9d2eb0;
+  width: 24px;
+  height: 24px;
+  transform: translateX(-50%) rotate(0deg);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% { transform: translateX(-50%) rotate(360deg)}
+}
+@keyframes move {
+  0% { transform: rotate(10deg)}
+  100% { transform: rotate(-10deg)}
+}
   

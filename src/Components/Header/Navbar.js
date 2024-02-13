@@ -65,19 +65,19 @@ const Navbar = () => {
 
                 <Box className={styles.links} sx={{display: { xs: "none", md: "flex" }}}>
                     <ul>
-                        <li><a href={"/#WhoAreWe"}>
+                        <li><a href={"/#WhoAreWe"} style={{textDecoration:"none"}}>
                             <Typography variant={"p"} color={"common.white"}>WHO ARE WE</Typography>
                         </a></li>
                         {/*<li><a href={"#Highlight"}>*/}
                         {/*    <Typography variant={"p"} color={"common.white"}>HIGHLIGHTS</Typography>*/}
                         {/*</a></li>*/}
-                        <li><a href={"/#OurCells"}>
+                        <li><a href={"/#OurCells"} style={{textDecoration:"none"}}>
                             <Typography variant={"p"} color={"common.white"}>CELLS</Typography>
                         </a></li>
-                        <li><a href={"/#OurEvents"}>
+                        <li><a href={"/#OurEvents"} style={{textDecoration:"none"}}>
                             <Typography variant={"p"} color={"white"} hov>EVENTS</Typography>
                         </a></li>
-                        <li><a href={"/itholic"}>
+                        <li><a href={"/itholic"} style={{textDecoration:"none"}}>
                             <Typography variant={"p"} color={"white"} hov>ITHOLIC</Typography>
                         </a></li>
                     </ul>

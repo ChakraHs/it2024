@@ -6,11 +6,23 @@ import CardNeon from './CardNeon';
 function AboutEvent() {
   return (
     <div class="event">
-        <h1 className='AboutEventTitle'>About the Event</h1>
+        <div className='AboutEventheader'>
+          <h1 className='AboutEventTitle h-underline-6'>About the Event</h1>
+          <p>description of event</p>
+        </div>
         <div className='CardGroup row'>
-            <CardNeon className="col-md-4" title="5 Speakers"/>
-            <CardNeon className="col-md-4" title="32 Hours"/>
-            <CardNeon className="col-md-4" title="3< prix"/>
+          <div className='col-md-3'>
+          <CardNeon title="+5" title2="Speackers"/>
+          </div>
+          <div className='col-md-3'>
+          <CardNeon title="32" title2="Hours"/>
+          </div>
+          <div className='col-md-3'>
+          <CardNeon title="3<" title2="Prix"/>
+          </div>
+          <div className='col-md-3'>
+          <CardNeon title="ech-chykry" title2="l3adama"/>
+          </div>
         </div>
     </div>
 

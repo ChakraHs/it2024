@@ -5,29 +5,29 @@ import TabPanel from "../../../_UI/TabPanel";
 import MainDiv from "../../../_UI/MainDiv";
 import TabContent from "./TabContent";
 
-const dayinfo = [
-    {
-        Day1: {
-            title: "9:30 a.m - 11:30 a.m",
-            text: "planning of matin.",
-        }
-    },
-    {
-        Day2: {
-            title: "9:30 a.m - 11:30 a.m",
-            text: "lftor okda",
-        }
-    },
-    {
-        Day3: {
-            title: "12:30 p.m - 1:30 p.m",
-            text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
-        }
+// const dayinfo = [
+//     {
+//         Day1: {
+//             title: "9:30 a.m - 11:30 a.m",
+//             text: "planning of matin.",
+//         }
+//     },
+//     {
+//         Day2: {
+//             title: "9:30 a.m - 11:30 a.m",
+//             text: "lftor okda",
+//         }
+//     },
+//     {
+//         Day3: {
+//             title: "12:30 p.m - 1:30 p.m",
+//             text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
+//         }
 
-    },
-]
+//     },
+// ]
 
-const DayPlanning = ({ id,sectionId }) => {
+const DayPlanning = ({dayinfo,id,sectionId }) => {
     // Hooks
     const [value, setValue] = useState(0);
     const [width,setWidth] = useState(window.innerWidth);
@@ -52,11 +52,11 @@ const DayPlanning = ({ id,sectionId }) => {
             textAlign:"right",
             maxWidth:"none",
             width: width,
-            height:"100px",
+            height:"50px",
             transition: ".4s",
-            fontSize:"1.5rem",
+            fontSize:"1rem",
             fontWeight:"400",
-            color:"white"
+            color:"black"
         }
     }
     const handleChange = (event, newValue) => {
@@ -84,7 +84,8 @@ const DayPlanning = ({ id,sectionId }) => {
         return <Tab sx={{
             fontSize:"1.5rem",
             fontWeight:"400",
-            borderRadius:"10px 10px 0 0"
+            borderRadius:"10px 10px 0 0",
+            color:"black",
         }} label={el.title} {...a11yProps(index)}></Tab>
     }
 
@@ -99,7 +100,7 @@ const DayPlanning = ({ id,sectionId }) => {
         width:"35%",
         position:"absolute",
         left:0,
-        top:"0px",
+        top:"10px",
         "& [aria-label]":{
             alignItems:"start"
         },
@@ -126,7 +127,7 @@ const DayPlanning = ({ id,sectionId }) => {
     
     return (
         <MainDiv id={id}>
-            <Container maxWidth={"xl"}>
+            <Container className="dayPlanning" maxWidth={"xl"} style={{ position: "relative", padding:"10px" }}>
                 {
                     width > theme.breakpoints.values.sm ?
                         <Box sx={ tabBoxSX } color={"white"}>
@@ -141,7 +142,6 @@ const DayPlanning = ({ id,sectionId }) => {
                                 onChange={handleChange}
                                 TabIndicatorProps={ tabIndcatorsProps }>
                                 { dayinfo.map(generateTab) }
-                                sas
                             </Tabs>
                         </Box> :
                         <Box>

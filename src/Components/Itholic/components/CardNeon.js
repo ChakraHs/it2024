@@ -9,6 +9,7 @@ function CardNeon(props) {
           <div class="back">
           <div class="back-content">
               <strong className='cardTitle'>{props.title}</strong>
+              <strong className='cardTitle2'>{props.title2}</strong>
           </div>
         </div>
       </div>
