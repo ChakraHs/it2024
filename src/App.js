@@ -2,7 +2,7 @@ import React from 'react';
 
 import {BrowserRouter, Route, Routes } from "react-router-dom";
 import Accueil from "./Components/Accueil/Accueil";
-import Itholic from "./Components/Itholic/pages/GlobalPage";
+import Itholic from "./Components/Itholic/pages/Itholic";
 // import Event from "./pages/Events";
 // import MeetTheTeam from "./pages/MeetTheTeam";
 
@@ -68,7 +68,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <Routes>
-                    <Route path={"/"} element={<Accueil/>} />
+                    <Route path={"/"} element={<Itholic/>} />
                     {/*<Route path={"/event"} element={<Event/>} />*/}
                     {/*<Route path={"/meet-the-team"} element={<MeetTheTeam/>} />*/}
                     <Route path={"/itholic"} element={<Itholic/>} />

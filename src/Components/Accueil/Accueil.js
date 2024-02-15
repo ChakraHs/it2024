@@ -4,7 +4,7 @@ import WhoAreWe from "./Who-are-we/WhoAreWe";
 import OurCells from "./Our-cells/OurCells";
 import OurEvents from "./Our-events/OurEvents";
 import Footer from "../Footer/Footer";
-import Highlight from "./Higlight/Highlight";
+// import Highlight from "./Higlight/Highlight";
 
 
 const Accueil = () => {
