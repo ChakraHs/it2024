@@ -11,96 +11,93 @@ function Schedule() {
 
   // Define the list of days and their activities
 
-  const day1info = [
-    {
-        tim1: {
-            title: "8:30 a.m - 11:30 a.m",
-            text: "planning of matin.",
-        }
-    },
-    {
-        tim2: {
-            title: "9:30 a.m - 11:30 a.m",
-            text: "lftor okda",
-        }
-    },
-    {
-        time3: {
-            title: "12:30 p.m - 1:30 p.m",
-            text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
-        }
+  const day1info = [{
+    tim1: {
+        title: "10:00 AM - 6:00 PM",
+        text: "Stands des sponsors"
+    }},{
+    tim2: {
+        title: "2:30 PM - 3:00 PM",
+        text: "Cérémonie d'ouverture"
+    }},{
+    tim3:{
+        title: "3:00 PM - 5:00 PM",
+        text: "Conférence 1"
+    }},{
+    tim4: {
+        title: "5:00 PM - 5:30 PM",
+        text: "Break"
+    }},{
+    tim5: {
+        title: "6:00 PM - 8:00 PM",
+        text: "Workshop"
+    }
+}];
 
-    },
-]
+const day2info = [{
+    tim1: {
+        title: "9:00 AM - 1:30 PM",
+        text: "CP Contest"
+    }},{
+    tim2: {
+        title: "1:30 PM - 2:30 PM",
+        text: "Break"
+    }},{
+    tim3: {
+        title: "2:30 PM - 5:30 ~ 6:00 PM",
+        text: "Conférence 2"
+    }
+}];
 
-
-const day2info = [
-  {
-      tim1: {
-          title: "8:30 a.m - 11:30 a.m",
-          text: "planning of matin day2.",
-      }
-  },
-  {
-      tim2: {
-          title: "9:30 a.m - 11:30 a.m",
-          text: "lftor okda",
-      }
-  },
-  {
-      time3: {
-          title: "12:30 p.m - 1:30 p.m",
-          text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
-      }
-
-  },
-]
-
-
-
-const day3info = [
-  {
-      tim1: {
-          title: "8:30 a.m - 11:30 a.m",
-          text: "planning of matin day3.",
-      }
-  },
-  {
-      tim2: {
-          title: "9:30 a.m - 11:30 a.m",
-          text: "lftor okda",
-      }
-  },
-  {
-      time3: {
-          title: "12:30 p.m - 1:30 p.m",
-          text: "chi tajin mbr3 fach yrb7 hossin lahoma barik",
-      }
-
-  },
-]
+const day3info = [{
+    tim1: {
+        title: "9:00 AM - 11:00 AM",
+        text: "Open Talks"
+    }},{
+    tim2: {
+        title: "11:00 AM - 11:30 AM",
+        text: "Break"
+    }},{
+    tim3: {
+        title: "11:30 AM - 2:00 PM",
+        text: "Pitch DevJam"
+    }},{
+    tim4: {
+        title: "2:00 PM - 3:00 PM",
+        text: "Break"
+    }},{
+    tim5: {
+        title: "3:00 PM - ..",
+        text: "Cérémonie de remise de prix"
+    }
+}];
   const days = [
     {
       day: 1,
       activities: [
-        { time: '10:00 AM', activity: 'Morning Yoga' },
-        { time: '12:00 PM', activity: 'Lunch Break' },
-        { time: '2:00 PM', activity: 'Workshop: React Basics' }
+        { time: '10:00 am - 2:00 pm', activity: 'Stands des sponsors' },
+        { time: '2:30 pm -3:00 pm', activity: 'Cérémonie d\'ouverture ' },
+        { time: '3:00 pm - 5:00 pm', activity: 'Conférence 1' },
+        { time: '5:00 pm - 5:30 pm', activity: 'Break' },
+        { time: '6:00 pm - 8:00 pm', activity: 'Workshop' },
       ]
     },
     {
       day: 2,
       activities: [
-        { time: '9:00 AM', activity: 'Breakfast' },
-        { time: '11:00 AM', activity: 'Panel Discussion' },
-        { time: '1:00 PM', activity: 'Lunch Break' }
+        { time: '9:00 am - 1:30 pm', activity: 'CP Contest' },
+        { time: '1:30 pm - 2:30 pm', activity: 'Break' },
+        { time: '2:30 pm - 5:30 ~ 6:00 pm', activity: 'Conférence 2' }
       ]
     },
     {
       day: 3,
       activities: [
-        { time: '10:00 AM', activity: 'Keynote Speech' },
-        { time: '1:00 PM', activity: 'Networking Session' }
+        { time: '9:00 am - 11:00 am', activity: 'Open Talks' },
+        { time: '11:00 am -11:30 am', activity: 'Break ' },
+        { time: '11:30 am - 2:00 pm', activity: 'Pitch DevJam' },
+        { time: '2:00 pm -3:00 pm', activity: 'Break ' },
+        { time: '3:00 pm - ..', activity: 'Cérémonie de remise de prix ' },
       ]
     }
   ];
@@ -116,11 +113,11 @@ const day3info = [
             <h1 className='scheduleTitle h-underline-6'>SCHEDULE</h1>
         </div>
       {/* Buttons to select days */}
-      <div className="day-selector row container justify-content-center d-flex w-100">
+      <div className="day-selector justify-content-center d-flex w-100">
         {days.map((dayObj) => (
           <button
             key={dayObj.day}
-            className={selectedDay === dayObj.day ? 'active col-md-4 row dayBtn' : 'col-md-4 row dayBtn'}
+            className={selectedDay === dayObj.day ? 'active dayBtn' : 'dayBtn'}
             onClick={() => handleDaySelect(dayObj.day)}
           >
             <div class="dayBtnContent">

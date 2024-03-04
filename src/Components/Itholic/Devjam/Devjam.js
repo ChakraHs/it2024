@@ -1,176 +1,190 @@
-// import Navbar from "../../Header/Navbar";
-// import bgVid from "../static/bgVid.mp4";
-// import Timer from "../Timer";
-// import {useTheme} from "@mui/material/styles";
-// import {Box, Button, List, ListItem, ListSubheader, Typography} from "@mui/material";
-// import DevjamNutshell from "./DevjamNutshell";
-// import Theme from "./Theme";
-// import React from "react";
-// import Rules from "../Rules";
-// import Rating from "../Rating";
-// import Socials from "../Socials";
-// import CircleIcon from '@mui/icons-material/Circle';
-// import Prize from "../Prize";
-// import cashPrize from "../static/cashPrize.png"
+import React, { useEffect, useState } from 'react';
+import '../assets/styles/GlobalPage.css'; // Import CSS styles
+import itholicVideo from '../assets/media/itholic8.mp4'; // Import the video file
+import '../assets/styles/AboutEvent.css'; // Import CSS styles
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// const Devjam = () => {
-//     const theme = useTheme();
+import pdfFile from '../assets/media/DEVJAM V2.0.pdf'; // Import your PDF file
 
-//     const videoContainerStyle = {
-//         position:"fixed",
-//         top:0,
-//         left:0,
-//         width : "100vw",
-//         height : "100vh",
-//         zIndex: -1,
-//         // background: "linear-gradient(-45deg,  #112D4E,#3c0063)",
-//         // backgroundSize: "400% 400%",
-//         // animation: "gradient 15s ease infinite",
-//         backgroundColor: "black"
-//     }
-//     const backgroundVideoStyle = {
-//         width: "100%",
-//         height: "100%",
-//         objectFit : "cover",
-//         position : "absolute",
-//         left : 0,
-//         top : 0,
-//         opacity : 0.3,
-//     }
-//     const centerContainerStyle = {
-//         position: "absolute",
-//         top: "0",
-//         left: "50%",
-//         transform: "translate(-50%,30vh)",
-//         color: "white",
-//         width:{
-//             xs:"86%",
-//             sm:"75%"
-//         }
-//     }
-//     const devjamInfoStyle = {
-//         backgroundColor:"white",
-//         borderRadius:{
-//             xs:"2rem 2rem 0 0",
-//             sm:"2rem"
-//         },
-//         padding: "3rem",
-//         boxSizing:"border-box",
-//         width:"100%",
-//         alignItems:"center",
-//         display:"flex",
-//         flexDirection:"column",
-//         justifyContent:"center",
-//         gap:"3rem",
-//     }
+import Schedule from '../components/Schedule';
+import Footer from '../../Footer/Footer';
+import Navbar from '../../Header/Navbar';
+import "./Timer.css";
+import Sponsors from '../components/SPONSORS/Sponsors';
 
-//     // content
-//     const rulesContent = {
-//         text:
-//             <ul>
-//                 <li>
-//                     <b>The teams should be constituted of 4 people.</b>
-//                     <ul>
-//                         <li><em>- If you still don't have a team, consider checking out discord server, in the
-//                         <code> Looking-for-team</code> section</em></li>
-//                     </ul>
-//                 </li><br/>
-//                 <li>
-//                     <b>A list of what you should give us at the end of the contest :</b>
-//                     <ul>
-//                         <li><em>- A Video (less than 3min) containing a description of the prototype and explaining its
-//                             relation to the devjam theme, and the technologies you have used.</em></li>
-//                         <li><em>- Documents describing the technologies you have used and how you used them.</em></li>
-//                         <li><em>- A way for us to test your working prototype.</em></li>
-//                     </ul>
-//                 </li><br/>
-//                 <li>
-//                     <b>The working prototype could be either a :</b>
-//                     <ul>
-//                         <li><em>- Web app.</em></li>
-//                         <li><em>- Mobile app.</em></li>
-//                     </ul>
-//                 </li><br/>
-//                 <li>
-//                     <b>What happens after your submition ?</b>
-//                     <ul>
-//                         <li><em>We will choose The teams with the best projects to come to the ENSIAS to give a pitch
-//                             and convince the judges, to get the top prize !</em></li>
-//                     </ul>
-//                 </li>
-//             </ul>
-//     }
-//     const ratingContent = {
-//         text:<>
-//             The ranking will consist mainly on the creativity and the relation of the project with the annouced
-//             theme of the DEVJAM. The selection will consist of 2 main phases :
-//             <ul>
-//                 <li>
-//                     <b>The first phase</b>
-//                     <ul>
-//                         <li>The first phase is where we will pick up the best projects among all of the submitions, and
-//                             judge them following some specific metrics by judges from the IT field with interesting
-//                             profiles.</li>
-//                     </ul>
-//                 </li><br/>
-//                 <li>
-//                     <b>The second phase</b>
-//                     <ul>
-//                         <li>The second phase will be an <b>in-person pitching at ENSIAS</b> in front of the said
-//                             judges and eventually a Q&A session, where you are gonna have to convince them to be worthy
-//                             of the prize !</li>
-//                     </ul>
-//                 </li>
-//             </ul>
-//         </>
-//     }
-//     const prizeContent = {
-//         text:<>
-//             <Typography variant={"justifiedText"} color={"black"}>
-//                 The winner of the competition will receive a total prize of
-//             </Typography>
-//             <img src={cashPrize} style={{width:"50%",margin:"auto"}}/>
-//         </>
-//     }
+function Timer() {
+  const [timeLeft, setTimeLeft] = useState(calculateRemainingTime());
+  const [timeLeftDevjam, setTimeLeftDevjam] = useState(calculateRemainingTimeDevjam());
 
-//     const devjamDeadline = new Date('2023-02-03T23:59:59');
-//     return <>
-//         <Navbar/>
-//         {/* VIDEO PLAYER FOR BACKGROUND THINGY*/}
-//         <div style={ videoContainerStyle }>
-//             <video autoPlay loop muted playsInline style={ backgroundVideoStyle }>
-//                 <source src={ bgVid } type='video/mp4' />
-//             </video>
-//         </div>
-
-//         <Box sx={centerContainerStyle}>
-//             <div id="title-text">
-//                 <Typography variant={"h1"} sx={{ color:"white",fontSize: {xs :"3rem", md:"7rem"},textAlign:"center" }}>DEVJAM</Typography>
-//                 {/*<h1 style={{textAlign:"center",margin:"1rem 0",fontSize:"7rem"}}>DEVJAM</h1>*/}
-//                 <p style={{textAlign:"center",margin:"0 0 5rem 0",fontSize:"1.3rem"}}>From Concept to Creation, unleash your IT MIND</p>
-//             </div>
-//             <Box id={"devjam-info"} sx={devjamInfoStyle}>
-//                 {
-//                     (devjamDeadline > new Date())?<>
-//                             <Timer targetDate={ devjamDeadline } dark/>
-//                             <Button variant="contained" href={"https://forms.gle/7WaqzftsVw5L2i9s9"} target={"_blank"}>
-//                                 <h2 style={{margin:"10px"}}>Join the JAM !</h2>
-//                             </Button>
-//                         </>
-//                         :
-//                         <Typography variant={"h1"} sx={{ color:theme.palette.primary.dark ,textAlign:"center" }}> - Registration has ended - </Typography>
-//                 }
-//                 <DevjamNutshell/>
-//                 <Theme/>
-//                 <Rules content={rulesContent}/>
-//                 <Rating content={ratingContent}/>
-//                 <Prize content={ prizeContent }/>
-//                 <Socials/>
-//             </Box>
-//         </Box>
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateRemainingTime());
+      setTimeLeftDevjam(calculateRemainingTimeDevjam());
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [timeLeft,timeLeftDevjam]);
 
 
-//     </>
-// }
+  function calculateRemainingTimeDevjam() {
 
-// export default Devjam;
+  const yearDevjam = new Date().getFullYear();
+  const eventDateDevjam = `02/29/${yearDevjam}`; // MM-DD-YYYY (31st Dec)
+  const differenceDevjam = new Date(eventDateDevjam) - new Date();
+  let timeRemainingDevjam = {};
+
+  if (differenceDevjam > 0) {
+    timeRemainingDevjam = {
+      Days: Math.floor(differenceDevjam / (1000 * 60 * 60 * 24)),
+      H: Math.floor((differenceDevjam / (1000 * 60 * 60)) % 24),
+      M: Math.floor((differenceDevjam / (1000 * 60)) % 60),
+      S: Math.floor((differenceDevjam / 1000) % 60),
+    };
+  }
+  return timeRemainingDevjam;
+}
+  
+  function calculateRemainingTime() {
+    const year = new Date().getFullYear();
+    const eventDate = `02/22/${year}`; // MM-DD-YYYY (31st Dec)
+    const difference = new Date(eventDate) - new Date();
+    let timeRemaining = {};
+
+
+    if (difference > 0) {
+      timeRemaining = {
+        Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        H: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        M: Math.floor((difference / (1000 * 60)) % 60),
+        S: Math.floor((difference / 1000) % 60),
+      };
+    }
+    return timeRemaining;
+  }
+
+
+
+  const timerComponents = [];
+  const timerDevjamComponents = [];
+
+  Object.keys(timeLeft).forEach((interval) => {
+    if (!timeLeft[interval]) {
+      return;
+    }
+    timerComponents.push(
+      <span className={interval} key={interval}>
+        {timeLeft[interval]} {interval}{" "}
+      </span>
+    );
+  });
+
+  Object.keys(timeLeftDevjam).forEach((interval) => {
+    if (!timeLeftDevjam[interval]) {
+      return;
+    }
+    timerDevjamComponents.push(
+      <span className={interval} key={interval}>
+        {timeLeftDevjam[interval]} {interval}{" "}
+      </span>
+    );
+  });
+
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3500); // Change the timeout value as needed
+
+    return () => clearTimeout(timer);
+  }, []); // Run useEffect only once on component mount
+
+  return (
+    <div>
+      <div className={`loader-container ${isLoading ? '' : 'hidden'}`}>
+        <div className="loader"></div> {/* Conditionally show loader */}
+      </div>
+         <Navbar />
+      <div className='hero'>
+        <video autoPlay loop muted className="background-video">
+          <source src={itholicVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="content">
+          <h1 className="titleGlobal">DevJam</h1> 
+          
+          <p className='titleGlobal-desc'>GRAND AMPHI, ENSIAS. 03 MARS 2024</p>
+          <div className="buttons">
+          {timerComponents.length ? <button className="button">
+              <a href='https://docs.google.com/forms/d/e/1FAIpQLSdB87jdyWDsrsKzv_X3X0fxYE4U3MR1VlWyvquqHlYArkcWRA/viewform?usp=sf_link' style={{textDecoration:'none',color:'#EFEFEF'}}>
+                Register Now
+              </a>
+              </button>: <span style={{color:'red'}}>The form is ended</span>}
+            </div>
+        </div>
+      </div>
+      <div className='container-event'>
+      {/* <div className="competession">
+      <div className='AboutCompetesionheader'>
+        <h1 className='AboutEventTitle'>About the competiton</h1>
+        <span className='AboutEvent-desc px-5'>DevJam, an impactful development competition organized within the context of ITholic, the grand event hosted by ENSIAS IT Club, is an exciting platform where participants engage in a spirited competition to craft innovative development solutions within a specific domain (to be announced soon). Aligned with the overarching theme of ITholic, "The Future of ITOps," this event seeks to propel participants into the forefront of technological advancements. Teams are challenged to harness their creativity, technical expertise, and collaborative spirit to address real-world issues and contribute to the evolving landscape of IT Operations (ITOps).
+        To be part of this extraordinary journey, seize the opportunity and register your team now, as the registration form will be closed on February 21 at 23:59. Join DevJam and play a pivotal role in shaping the future of ITOps!  </span>
+      </div>
+    </div> */}
+
+    <div className='AboutCompetesionheader py-5'>
+        <h1 className='AboutEventTitle'>DEVJAM V 2.0: Global Triumph Solutions Challenge</h1>
+        <span className='AboutEvent-desc text-start px-5'>
+        <b>Background:</b><br /><br />
+        No Moroccan can forget the euphoria of the World Cup qualification in Qatar 2022. As the attention
+        shifts towards hosting the Cup of Africa in 2025 and the World Cup in 2030, the organizing committee
+        acknowledges the critical role that technology and operational efficiency will play in ensuring the success
+        of these global events. Beyond the grand spectacle, hosting such monumental occasions is viewed as a
+        catalyst for the country's development, intensifying the need for innovative and impactful solutions.<br /><br />
+        DEVJAM challenges participants to explore inventive solutions and advancements across various
+        domains, encompassing sports, tourism, and logistics, leveraging the power of ITOPS
+        <br />
+        <h6 style={{fontWeight:"bolder"}}>Sub-domains :</h6>
+        <u>Sport :</u> <br />
+        In the Sport domain, we seek innovations that enhance the overall event experience. This includes
+        advanced event management for seamless coordination and immersive digital platforms for elevated fan
+        engagement.<br />
+        <u>Tourism :</u> <br />
+        Within Tourism, the focus is on showcasing the host nation's cultural richness. Innovations in smart
+        destination management aim to optimize visitor experiences, while strategies highlight how major
+        sporting events can transform tourism and create lasting attractions.<br />
+        <u>Logistics :</u> <br />
+        The Logistics domain emphasizes efficiency and sustainability. Solutions aim to streamline coordination
+        of resources and enhance event efficiency, while also promoting eco-friendly practices in transportation,
+        accommodation, and supply chain management for lasting positive impacts.
+
+        </span>
+      </div>
+      <div className='AboutCompetesionheader'>
+        <h1 className='AboutEventTitle'>DEV JAM V 2 RULES</h1>
+        <p>Competition details:</p>
+        <a className="button-pdf" href={pdfFile} download>Download PDF</a>
+      </div>
+
+    {/* <div className='timerComponent'>
+      <h1 className='AboutEventTitle'>The form ends in</h1>
+      <div className='timeLeft'>
+        {timerComponents.length ? timerComponents : <span>00:00:00</span>}
+      </div>
+    </div>  */}
+      </div>
+
+      <div className='mt-5 timerComponent'>
+        <h1 className='AboutEventTitle'>Competition ends in</h1>
+        <div className='timeLeft'>
+          {timerDevjamComponents.length ? timerDevjamComponents : <span>00:00:00</span>}
+        </div>
+      </div>
+
+      <Sponsors />
+
+     <Footer />
+     </div>
+  );
+}
+
+export default Timer;

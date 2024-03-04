@@ -8,7 +8,7 @@
     padding: 40px;
     padding-top:80px;
     padding-bottom: 80px;
-    color: aliceblue;
+    color: #FEFEFE;
   }
 
 
@@ -24,11 +24,11 @@
     /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
     /* background-repeat: repeat; */
     width: 100vw;
-    height: 150px;
+    height: 250px;
 }
 .speakerTitle{
     font-size: 2.8rem;
-    color: rgb(255, 255, 255);
+    color: #FEFEFE;
     text-transform: uppercase;
     /* text-shadow: 0 0 65px #9d2eb0; */
     position: relative;
@@ -53,6 +53,7 @@
     justify-content: center;
     text-align: center;
     width: 90%;
+    margin-bottom: 5px;
 }
 
 .speackerimage{

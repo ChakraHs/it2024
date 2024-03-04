@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import '../../assets/styles/speakers.css'; // Import CSS styles
+import Guess from '../../assets/media/images/Guess.jpg';
 
 
 
@@ -9,21 +10,21 @@ const Speakers = () => {
   const speakers = [
     {
       id: 1,
-      name: 'John Doe',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      imageUrl: 'https://zayed-mohammed-uddin.github.io/Axon-The-Annual-Conference/Images/Testimonials/team3.jpg',
+      name: 'Guess',
+      description: '...',
+      imageUrl: Guess,
     },
     {
       id: 2,
-      name: 'Jane Smith',
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      imageUrl: 'https://zayed-mohammed-uddin.github.io/Axon-The-Annual-Conference/Images/Testimonials/team2.jpg',
+      name: 'Guess',
+      description: '...',
+      imageUrl: Guess,
     },
     {
         id: 3,
-        name: 'Jane Chakra',
-        description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        imageUrl: 'https://zayed-mohammed-uddin.github.io/Axon-The-Annual-Conference/Images/Testimonials/team1.jpg',
+        name: 'Guess',
+        description: '...',
+        imageUrl: Guess,
       },
     // Add more speakers as needed
   ];

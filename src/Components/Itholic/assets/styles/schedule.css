@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    background-color: #ffffff;
+    background-color: #FEFEFE;
     padding: 40px;
     padding-top:80px;
     padding-bottom: 80px;
@@ -19,7 +19,7 @@
     text-align: center;
     justify-content: center;
     font-weight: 600;
-    background-color: rgb(255, 255, 255);
+    background-color: #FEFEFE;
     /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
     /* background-repeat: repeat; */
     width: 100vw;
@@ -41,19 +41,25 @@
   }
   .day-selector {
     margin-bottom: 20px;
+    width: 100vw !important;
+    display: flex;
+    /* background-color: #4F4F4F; */
+    align-items: center;
+    justify-content: center;
   }
   
   .day-selector button {
-    margin-right: 10px;
+    /* margin-right: 10px; */
     padding: 5px 10px;
     border: none;
     background-color: #151515;
     cursor: pointer;
-    color: white;
+    color: #FEFEFE;
+    width: 30%;
   }
   
   .day-selector button.active {
-    color: white;
+    color: #FEFEFE;
     background-color: #e24bfc;
 
   }
@@ -61,7 +67,7 @@
   .activities {
     /* border: 1px solid #ccc; */
     padding: 20px;
-    color: white;
+    color: #FEFEFE;
   }
   
   .activities h2 {
@@ -80,13 +86,13 @@
   }
 
   .day{
-    color: #ffffff;
+    color: #FEFEFE;
     font-weight: 500;
     text-transform: uppercase;
   }
 
   .active .day{
-    color: #ffffff;
+    color: #FEFEFE;
   }
 
 
@@ -157,7 +163,7 @@
     height: 99%;
     background-color: #151515;
     border-radius: 5px;
-    color: white;
+    color: #FEFEFE;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,7 +177,7 @@
     height: 99%;
     background-color: #e24bfc;
     border-radius: 5px;
-    color: white;
+    color: #FEFEFE;
     display: flex;
     flex-direction: column;
     justify-content: center;

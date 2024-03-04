@@ -114,11 +114,9 @@ const Navbar = () => {
                     >
                         {pages.map((page) => (
                             <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                page.id != 'itholic'?
                                 <a href={"/"+page.id} style={{  textDecoration: "none", color:theme.palette.text.primary}}>
                                     <Typography textAlign="center">{page.title}</Typography>
-                                </a> : 
-                                <Link to="/itholic">ITHOLIC</Link>
+                                </a>
                             </MenuItem>
                         ))}
                     </Menu>

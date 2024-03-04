@@ -68,7 +68,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <Routes>
-                    <Route path={"/"} element={<Itholic/>} />
+                    <Route path={"/"} element={<Accueil/>} />
                     {/*<Route path={"/event"} element={<Event/>} />*/}
                     {/*<Route path={"/meet-the-team"} element={<MeetTheTeam/>} />*/}
                     <Route path={"/itholic"} element={<Itholic/>} />

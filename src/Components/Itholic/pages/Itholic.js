@@ -16,17 +16,17 @@ function Itholic() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Change the timeout value as needed
+    }, 3500); // Change the timeout value as needed
 
     return () => clearTimeout(timer);
   }, []); // Run useEffect only once on component mount
 
   return (
+    <div>
     <div className="global-page">
-      {isLoading ? (
-        <div className="loader"></div>
-      ) : (
-        <>
+      <div className={`loader-container ${isLoading ? '' : 'hidden'}`}>
+        <div className="loader"></div> {/* Conditionally show loader */}
+      </div>
           <Navbar />
           <div className='hero'>
             <video autoPlay loop muted className="background-video">
@@ -35,17 +35,21 @@ function Itholic() {
             </video>
             <div className="content">
               <img className='imgG' src={itholicLogo} alt="ITHOLIC logo" />
-              <p className='titleGlobal-desc'>GRAND AMPHI, ENSIAS. 01-03 MARS 2024</p>
+              {/* <div className='images row container d-flex w-100 justify-content-center'>
+                <img className='imgG imgG1' src={itholicLogo1} alt="ITHOLIC logo" />
+                <img className='imgG imgG2' src={itholicLogo2} alt="ITHOLIC logo" />
+                <img className='imgG imgG3' src={itholicLogo3} alt="ITHOLIC logo" />
+              </div> */}
+              <p className='titleGlobal-desc'>GRAND AMPHI - ENSIAS | 01 TO 03 MARCH 2024</p>
               <ButtonGroup />
             </div>
           </div>
           <AboutEvent />
           <Schedule />
-          <Speakers />
+          {/* <Speakers /> */}
           <Sponsors />
-          <Footer />
-        </>
-      )}
+    </div>
+    <Footer />
     </div>
   );
 

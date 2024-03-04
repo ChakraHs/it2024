@@ -52,7 +52,7 @@ const DayPlanning = ({dayinfo,id,sectionId }) => {
             textAlign:"right",
             maxWidth:"none",
             width: width,
-            height:"50px",
+            height:"40px",
             transition: ".4s",
             fontSize:"1rem",
             fontWeight:"400",
@@ -66,7 +66,7 @@ const DayPlanning = ({dayinfo,id,sectionId }) => {
         const cellName = Object.keys(el)[0];
         el = el[cellName];
         return (
-            <TabPanel value={value} index={index}>
+            <TabPanel className="pt-4" value={value} index={index}>
                 <TabContent>
                     {el.text}
                 </TabContent>
@@ -82,7 +82,7 @@ const DayPlanning = ({dayinfo,id,sectionId }) => {
         const cellName = Object.keys(el)[0];
         el = el[cellName];
         return <Tab sx={{
-            fontSize:"1.5rem",
+            fontSize:"1.1rem",
             fontWeight:"400",
             borderRadius:"10px 10px 0 0",
             color:"black",
@@ -117,7 +117,7 @@ const DayPlanning = ({dayinfo,id,sectionId }) => {
         alignItems:"top",
         marginTop:"0px",
         marginLeft:"auto",
-        height:"200px",
+        height:"240px",
         width:"60%",
     }
     useEffect(() => {

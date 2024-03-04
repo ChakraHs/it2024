@@ -1,5 +1,5 @@
 .event {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 20px;
     width: 100vw;
     overflow-x: hidden;
@@ -9,11 +9,28 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding-top:0px;
-    padding-bottom: 150px;
+    /* padding-top:0px;
+    padding-bottom: 50px; */
     /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
     /* background-repeat: repeat; */
 
+  }
+
+
+  .button-pdf {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0);
+    color: #FEFEFE;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #9d2eb0;
+    box-shadow: 0 0 35px #9d2eb0;
+    text-transform: uppercase;
+    /* transition: transform 4s ease-in-out, scale 500ms 1.02 ease-in-out; */
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+    margin-top: 20px;
   }
   
 
@@ -29,7 +46,7 @@
     /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
     /* background-repeat: repeat; */
     width: 100vw;
-    height: 350px;
+    height: 400px;
 }
 .AboutEventTitle{
     font-size: 2.8rem;
@@ -55,5 +72,16 @@
     width: 60%;
 }
 
+.text-start{
+    text-align: start;
+}
+
+.text-start b{
+    font-size: 1.2rem;
+}
+
+.fw-6{
+    font-weight: bold !important;
+}
 
   

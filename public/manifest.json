@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ENSIAS IT CLUB APP",
+  "name": "Ensias It clu",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,9 +8,8 @@
       "type": "image/x-icon"
     },
     {
-      "src": "android-chrome-512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "itholicISet.PNG",
+      "type": "image/png"
     }
   ],
   "start_url": ".",

@@ -1,0 +1,106 @@
+/* Timer.css */
+
+  
+.competession {
+  /* border-radius: 10px; */
+  padding: 20px;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  /* padding-top:0px;
+  padding-bottom: 50px; */
+  /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
+  /* background-repeat: repeat; */
+
+}
+
+.AboutCompetesionheader{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom:60px; */
+  text-align: center;
+  justify-content: center;
+  font-weight: 600;
+  background-color: #FFF;
+  /* background-image: url("https://www.transparenttextures.com/patterns/always-grey.png"); */
+  /* background-repeat: repeat; */
+  width: 100vw;
+  /* height: 300px; */
+}
+
+
+.container-event{
+  background-color: #EFEFEF !important;
+}
+
+  .timerCard {
+    background-color: #FFF;
+    color: #151515;
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .timerComponent {
+    text-align: center;
+    background-color: #FFF;
+  }
+  
+  .eventName {
+    font-size: 2rem;
+    color: #151515;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .timeLeft {
+    font-size: 1.5rem;
+    color: #151515;
+  }
+  
+  .timeLeft span {
+    margin: 0 5px;
+  }
+  
+  .Days,
+  .H,
+  .M,
+  .S {
+    font-size: 2rem;
+    color: #9d2eb0;
+    font-family: 'Indie Flower', cursive;
+  }
+  
+  @media (max-width: 768px) {
+    .timerCard {
+      width: 80%;
+    }
+    
+    .eventName {
+      font-size: 1.5rem;
+    }
+    
+    .timeLeft {
+      font-size: 1.2rem;
+    }
+    
+    .days,
+    .hours,
+    .minutes,
+    .seconds {
+      font-size: 1.5rem;
+    }
+
+    .titleGlobal{
+      font-size: 2.6rem;
+    }
+  }
+  
